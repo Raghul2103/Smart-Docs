@@ -1,0 +1,14 @@
+{
+  "name": "smartdocs-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "install-client": "npm install --prefix client",
+    "build-client": "npm run build --prefix client",
+    "build": "npm run build --prefix client"
+  }
+}

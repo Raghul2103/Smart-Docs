@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap");
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-200: #bae6fd;
+  --color-primary-300: #7dd3fc;
+  --color-primary-400: #38bdf8;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #0284c7;
+  --color-primary-700: #0369a1;
+  --color-primary-800: #075985;
+  --color-primary-900: #0c4a6e;
+  --color-primary-950: #082f49;
+
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Outfit", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased selection:bg-sky-500 selection:text-white transition-colors duration-200;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-slate-100 dark:bg-slate-950;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-800 rounded-full hover:bg-slate-400 dark:hover:bg-slate-700 transition-colors;
+}
+
+/* Tiptap editor styling overrides */
+.ProseMirror {
+  outline: none;
+  min-height: 400px;
+}
+
+.ProseMirror p {
+  @apply mb-4 leading-relaxed text-slate-700 dark:text-slate-300;
+}
+
+.ProseMirror p:last-child {
+  @apply mb-0;
+}
+
+.ProseMirror h1 {
+  @apply text-3xl font-bold font-display mt-6 mb-4 text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-2;
+}
+
+.ProseMirror h2 {
+  @apply text-2xl font-bold font-display mt-5 mb-3 text-slate-900 dark:text-white;
+}
+
+.ProseMirror h3 {
+  @apply text-xl font-bold font-display mt-4 mb-2 text-slate-900 dark:text-white;
+}
+
+.ProseMirror ul {
+  @apply list-disc pl-6 mb-4 space-y-2 text-slate-700 dark:text-slate-300;
+}
+
+.ProseMirror ol {
+  @apply list-decimal pl-6 mb-4 space-y-2 text-slate-700 dark:text-slate-300;
+}
+
+.ProseMirror u {
+  @apply underline decoration-slate-400 dark:decoration-slate-500;
+}
+
+.ProseMirror blockquote {
+  @apply border-l-4 border-sky-500 pl-4 italic text-slate-500 dark:text-slate-400 my-4;
+}
+
+.ProseMirror hr {
+  @apply border-slate-200 dark:border-slate-800 my-6;
+}
